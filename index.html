@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yamihaa — Elegant Sarees</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --sage: #b5c9b7;
+    --sage-light: #d4e4d6;
+    --sage-pale: #eaf3eb;
+    --sage-deep: #7fa883;
+    --sage-mist: #f4f9f5;
+    --cream: #fdf8f2;
+    --gold: #c8a96e;
+    --gold-light: #e8d5b0;
+    --text-dark: #2a3128;
+    --text-mid: #4e5e4b;
+    --text-soft: #7a8e76;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Jost', sans-serif;
+    background: var(--sage-mist);
+    color: var(--text-dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER ─────────────────────────────────── */
+  header {
+    background: var(--cream);
+    border-bottom: 1px solid var(--sage-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+  }
+
+  .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    color: var(--text-dark);
+    text-decoration: none;
+  }
+
+  .logo span {
+    color: var(--sage-deep);
+  }
+
+  nav {
+    display: flex;
+    gap: 2.5rem;
+    align-items: center;
+  }
+
+  nav a {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  nav a:hover { color: var(--sage-deep); }
+
+  .nav-cta {
+    background: var(--sage-deep);
+    color: white !important;
+    padding: 0.55rem 1.4rem;
+    border-radius: 2px;
+    transition: background 0.3s !important;
+  }
+
+  .nav-cta:hover { background: var(--text-dark) !important; color: white !important; }
+
+  /* ─── HERO BANNER ────────────────────────────── */
+  .hero {
+    background: linear-gradient(135deg, var(--sage-pale) 0%, var(--cream) 50%, var(--sage-light) 100%);
+    padding: 6rem 3rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--sage-light) 0%, transparent 70%);
+    opacity: 0.6;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: -40px;
+    width: 280px; height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, var(--gold-light) 0%, transparent 70%);
+    opacity: 0.4;
+  }
+
+  .hero-text { position: relative; z-index: 2; }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+
+  .hero-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    line-height: 1.12;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--sage-deep);
+  }
+
+  .hero-subtitle {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-soft);
+    line-height: 1.8;
+    max-width: 380px;
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    padding: 0.85rem 2.5rem;
+    background: var(--text-dark);
+    color: var(--cream);
+    font-size: 0.78rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background 0.3s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .hero-btn:hover { background: var(--sage-deep); transform: translateY(-2px); }
+
+  .hero-img-wrap {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+  }
+
+  .hero-img-frame {
+    width: 340px;
+    height: 460px;
+    background: linear-gradient(160deg, var(--sage-light), var(--sage));
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(42,49,40,0.15), 0 4px 12px rgba(42,49,40,0.08);
+  }
+
+  .hero-img-frame::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 2;
+  }
+
+  .hero-saree-svg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+  }
+
+  .hero-img-badge {
+    position: absolute;
+    bottom: -14px;
+    right: -14px;
+    background: var(--gold);
+    color: white;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    text-align: center;
+    line-height: 1.3;
+    box-shadow: 0 4px 14px rgba(200,169,110,0.4);
+  }
+
+  /* ─── SECTION TITLE ──────────────────────────── */
+  .section-head {
+    text-align: center;
+    padding: 4.5rem 3rem 2.5rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 300;
+    color: var(--text-dark);
+  }
+
+  .section-title em { font-style: italic; color: var(--sage-deep); }
+
+  .divider {
+    width: 60px; height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 1rem auto 0;
+  }
+
+  /* ─── PRODUCT GRID ───────────────────────────── */
+  .products {
+    padding: 1.5rem 3rem 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .product-card {
+    background: var(--cream);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: transform 0.35s cubic-bezier(.25,.8,.25,1), box-shadow 0.35s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(42,49,40,0.12);
+  }
+
+  .product-card:hover .card-overlay { opacity: 1; }
+
+  .card-img {
+    width: 100%;
+    aspect-ratio: 3/4;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(42,49,40,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.35s;
+  }
+
+  .card-overlay span {
+    color: white;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.7);
+    padding: 0.55rem 1.4rem;
+  }
+
+  .card-body {
+    padding: 1.2rem 1.3rem 1.4rem;
+    border-top: 1px solid var(--sage-pale);
+  }
+
+  .card-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sage-deep);
+    margin-bottom: 0.35rem;
+    font-weight: 500;
+  }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.22rem;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+
+  .card-price {
+    font-size: 0.98rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    letter-spacing: 0.04em;
+  }
+
+  .card-price .currency {
+    font-size: 0.75rem;
+    color: var(--text-soft);
+    margin-right: 2px;
+  }
+
+  /* ─── SAREE ILLUSTRATIONS (SVG placeholders) ─── */
+  .saree-svg-wrap {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ─── CATEGORIES STRIP ───────────────────────── */
+  .categories {
+    background: var(--sage-pale);
+    padding: 3rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cat-pill {
+    padding: 0.65rem 2rem;
+    border: 1px solid var(--sage);
+    background: white;
+    color: var(--text-mid);
+    font-size: 0.78rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s;
+    border-radius: 50px;
+  }
+
+  .cat-pill:hover, .cat-pill.active {
+    background: var(--sage-deep);
+    border-color: var(--sage-deep);
+    color: white;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────── */
+  footer {
+    background: var(--text-dark);
+    color: var(--sage-light);
+    padding: 4rem 3rem 2rem;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.2rem;
+    font-weight: 300;
+    color: white;
+    letter-spacing: 0.12em;
+    margin-bottom: 1rem;
+  }
+
+  .footer-logo span { color: var(--sage); }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-soft);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    max-width: 260px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 0.8rem;
+  }
+
+  .social-dot {
+    width: 34px; height: 34px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--sage-light);
+    cursor: pointer;
+    transition: all 0.25s;
+  }
+
+  .social-dot:hover {
+    background: var(--sage-deep);
+    border-color: var(--sage-deep);
+    color: white;
+  }
+
+  .footer-col h4 {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--sage);
+    margin-bottom: 1.2rem;
+    font-weight: 500;
+  }
+
+  .footer-col ul { list-style: none; }
+
+  .footer-col ul li {
+    margin-bottom: 0.7rem;
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: color 0.25s;
+  }
+
+  .footer-col ul li:hover { color: var(--sage-light); }
+
+  .contact-item {
+    display: flex;
+    gap: 0.7rem;
+    margin-bottom: 0.9rem;
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    width: 16px;
+    color: var(--sage);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-text {
+    font-size: 0.83rem;
+    font-weight: 300;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.55;
+  }
+
+  .footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .copyright {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.35);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-links-bottom {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .footer-links-bottom a {
+    font-size: 0.72rem;
+    color: rgba(255,255,255,0.3);
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.25s;
+  }
+
+  .footer-links-bottom a:hover { color: var(--sage-light); }
+
+  /* ─── ANIMATIONS ─────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-text { animation: fadeUp 0.8s ease both; }
+  .hero-img-wrap { animation: fadeUp 0.8s 0.2s ease both; }
+
+  .product-card:nth-child(1) { animation: fadeUp 0.6s 0.1s ease both; }
+  .product-card:nth-child(2) { animation: fadeUp 0.6s 0.2s ease both; }
+  .product-card:nth-child(3) { animation: fadeUp 0.6s 0.3s ease both; }
+  .product-card:nth-child(4) { animation: fadeUp 0.6s 0.4s ease both; }
+  .product-card:nth-child(5) { animation: fadeUp 0.6s 0.5s ease both; }
+  .product-card:nth-child(6) { animation: fadeUp 0.6s 0.6s ease both; }
+  .product-card:nth-child(7) { animation: fadeUp 0.6s 0.7s ease both; }
+  .product-card:nth-child(8) { animation: fadeUp 0.6s 0.8s ease both; }
+
+  @media (max-width: 1100px) {
+    .products { grid-template-columns: repeat(3, 1fr); }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 768px) {
+    header { padding: 0 1.5rem; }
+    nav { display: none; }
+    .hero { grid-template-columns: 1fr; padding: 3rem 1.5rem; gap: 2.5rem; }
+    .hero-title { font-size: 2.8rem; }
+    .hero-img-frame { width: 260px; height: 340px; }
+    .products { grid-template-columns: repeat(2, 1fr); padding: 1rem 1.5rem 3rem; gap: 1.2rem; }
+    .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║           HEADER             ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<header>
+  <a class="logo" href="#">Yamihaa<span>.</span></a>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Collections</a>
+    <a href="#">Fabrics</a>
+    <a href="#">About</a>
+    <a href="#" class="nav-cta">Shop Now</a>
+  </nav>
+</header>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║            HERO              ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">New Arrivals — 2025 Collection</p>
+    <h1 class="hero-title">Draped in<br><em>Timeless</em><br>Elegance</h1>
+    <p class="hero-subtitle">Discover handcrafted sarees woven with heritage silk, delicate zari, and stories passed down through generations.</p>
+    <a href="#" class="hero-btn">Explore Collection</a>
+  </div>
+  <div class="hero-img-wrap">
+    <div class="hero-img-frame">
+      <!-- Decorative saree illustration SVG -->
+      <svg viewBox="0 0 340 460" xmlns="http://www.w3.org/2000/svg" class="hero-saree-svg">
+        <defs>
+          <linearGradient id="sGrad" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#a8c8aa"/>
+            <stop offset="50%" stop-color="#c8deca"/>
+            <stop offset="100%" stop-color="#8fae92"/>
+          </linearGradient>
+          <linearGradient id="borderGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#c8a96e"/>
+            <stop offset="100%" stop-color="#e8d5b0"/>
+          </linearGradient>
+          <pattern id="silkSheen" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="30" y2="30" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+            <line x1="30" y1="0" x2="0" y2="30" stroke="rgba(255,255,255,0.04)" stroke-width="0.5"/>
+          </pattern>
+          <pattern id="zari" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+            <circle cx="10" cy="10" r="2" fill="rgba(200,169,110,0.5)"/>
+            <circle cx="0" cy="0" r="1" fill="rgba(200,169,110,0.3)"/>
+            <circle cx="20" cy="0" r="1" fill="rgba(200,169,110,0.3)"/>
+            <circle cx="0" cy="20" r="1" fill="rgba(200,169,110,0.3)"/>
+            <circle cx="20" cy="20" r="1" fill="rgba(200,169,110,0.3)"/>
+          </pattern>
+        </defs>
+        <!-- Background -->
+        <rect width="340" height="460" fill="url(#sGrad)"/>
+        <rect width="340" height="460" fill="url(#silkSheen)"/>
+        <!-- Pallu drape -->
+        <path d="M60,0 Q170,-10 280,60 Q310,120 300,200 Q290,280 260,340 Q230,400 200,460 L130,460 Q160,380 170,300 Q175,220 150,150 Q120,80 60,0Z" fill="rgba(255,255,255,0.12)"/>
+        <!-- Border stripe top -->
+        <rect x="0" y="0" width="340" height="22" fill="url(#borderGrad)" opacity="0.85"/>
+        <!-- Border stripe bottom -->
+        <rect x="0" y="438" width="340" height="22" fill="url(#borderGrad)" opacity="0.85"/>
+        <!-- Side borders -->
+        <rect x="0" y="0" width="18" height="460" fill="url(#borderGrad)" opacity="0.7"/>
+        <rect x="322" y="0" width="18" height="460" fill="url(#borderGrad)" opacity="0.7"/>
+        <!-- Zari pattern on borders -->
+        <rect x="0" y="0" width="340" height="22" fill="url(#zari)" opacity="0.9"/>
+        <rect x="0" y="438" width="340" height="22" fill="url(#zari)" opacity="0.9"/>
+        <!-- Center motif -->
+        <g transform="translate(170,230)">
+          <circle cx="0" cy="0" r="45" fill="none" stroke="rgba(200,169,110,0.4)" stroke-width="1.5"/>
+          <circle cx="0" cy="0" r="30" fill="none" stroke="rgba(200,169,110,0.6)" stroke-width="1"/>
+          <circle cx="0" cy="0" r="15" fill="rgba(200,169,110,0.25)"/>
+          <!-- Petals -->
+          <g fill="rgba(200,169,110,0.5)">
+            <ellipse cx="0" cy="-40" rx="5" ry="12" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-40" rx="5" ry="12" transform="rotate(45)"/>
+            <ellipse cx="0" cy="-40" rx="5" ry="12" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-40" rx="5" ry="12" transform="rotate(135)"/>
+            <ellipse cx="0" cy="-40" rx="5" ry="12" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-40" rx="5" ry="12" transform="rotate(225)"/>
+            <ellipse cx="0" cy="-40" rx="5" ry="12" transform="rotate(270)"/>
+            <ellipse cx="0" cy="-40" rx="5" ry="12" transform="rotate(315)"/>
+          </g>
+          <circle cx="0" cy="0" r="8" fill="rgba(200,169,110,0.7)"/>
+        </g>
+        <!-- Smaller scattered motifs -->
+        <g transform="translate(80,120)" opacity="0.7">
+          <circle cx="0" cy="0" r="16" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1"/>
+          <circle cx="0" cy="0" r="6" fill="rgba(200,169,110,0.4)"/>
+        </g>
+        <g transform="translate(265,140)" opacity="0.7">
+          <circle cx="0" cy="0" r="16" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1"/>
+          <circle cx="0" cy="0" r="6" fill="rgba(200,169,110,0.4)"/>
+        </g>
+        <g transform="translate(90,340)" opacity="0.7">
+          <circle cx="0" cy="0" r="12" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1"/>
+          <circle cx="0" cy="0" r="5" fill="rgba(200,169,110,0.4)"/>
+        </g>
+        <g transform="translate(255,350)" opacity="0.7">
+          <circle cx="0" cy="0" r="12" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1"/>
+          <circle cx="0" cy="0" r="5" fill="rgba(200,169,110,0.4)"/>
+        </g>
+        <!-- Fabric fold lines -->
+        <path d="M0,100 Q85,90 170,105 Q255,120 340,100" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+        <path d="M0,180 Q100,165 170,185 Q240,200 340,180" stroke="rgba(255,255,255,0.10)" stroke-width="1" fill="none"/>
+        <path d="M0,290 Q80,275 170,295 Q260,310 340,290" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+        <path d="M0,380 Q90,368 170,384 Q250,395 340,380" stroke="rgba(255,255,255,0.07)" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="hero-img-badge">New<br>2025</div>
+    </div>
+  </div>
+</section>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║         CATEGORIES           ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<div class="categories">
+  <div class="cat-pill active">All Sarees</div>
+  <div class="cat-pill">Silk</div>
+  <div class="cat-pill">Cotton</div>
+  <div class="cat-pill">Georgette</div>
+  <div class="cat-pill">Banarasi</div>
+  <div class="cat-pill">Linen</div>
+  <div class="cat-pill">Bridal</div>
+</div>
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║         PRODUCTS             ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<div class="section-head">
+  <p class="section-eyebrow">Curated Collection</p>
+  <h2 class="section-title">Our <em>Featured</em> Sarees</h2>
+  <div class="divider"></div>
+</div>
+
+<div class="products">
+
+  <!-- Card 1 -->
+  <div class="product-card">
+    <div class="card-img">
+      <svg viewBox="0 0 280 373" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="c1" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#b5c9b7"/>
+            <stop offset="100%" stop-color="#7fa883"/>
+          </linearGradient>
+        </defs>
+        <rect width="280" height="373" fill="url(#c1)"/>
+        <rect width="280" height="373" fill="url(#silkSheen)"/>
+        <rect x="0" y="0" width="280" height="18" fill="#c8a96e" opacity="0.8"/>
+        <rect x="0" y="355" width="280" height="18" fill="#c8a96e" opacity="0.8"/>
+        <rect x="0" y="0" width="15" height="373" fill="#c8a96e" opacity="0.6"/>
+        <rect x="265" y="0" width="15" height="373" fill="#c8a96e" opacity="0.6"/>
+        <g transform="translate(140,186)">
+          <circle r="40" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="1.5"/>
+          <circle r="20" fill="rgba(200,169,110,0.3)"/>
+          <circle r="8" fill="rgba(200,169,110,0.7)"/>
+        </g>
+        <path d="M30,80 Q140,65 250,80" stroke="rgba(255,255,255,0.15)" stroke-width="1.5" fill="none"/>
+        <path d="M30,150 Q140,135 250,150" stroke="rgba(255,255,255,0.12)" stroke-width="1" fill="none"/>
+        <path d="M30,250 Q140,238 250,250" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+        <path d="M30,320 Q140,310 250,320" stroke="rgba(255,255,255,0.08)" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="card-overlay"><span>Quick View</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-tag">Pure Silk</p>
+      <h3 class="card-title">Emerald Bloom Silk Saree</h3>
+      <p class="card-price"><span class="currency">LKR</span> 18,500</p>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="product-card">
+    <div class="card-img">
+      <svg viewBox="0 0 280 373" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="c2" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e8d5b0"/>
+            <stop offset="100%" stop-color="#c8a96e"/>
+          </linearGradient>
+        </defs>
+        <rect width="280" height="373" fill="url(#c2)"/>
+        <rect x="0" y="0" width="280" height="18" fill="#2a3128" opacity="0.7"/>
+        <rect x="0" y="355" width="280" height="18" fill="#2a3128" opacity="0.7"/>
+        <rect x="0" y="0" width="15" height="373" fill="#2a3128" opacity="0.5"/>
+        <rect x="265" y="0" width="15" height="373" fill="#2a3128" opacity="0.5"/>
+        <g transform="translate(140,186)">
+          <rect x="-35" y="-35" width="70" height="70" fill="none" stroke="rgba(42,49,40,0.4)" stroke-width="1.5" transform="rotate(45)"/>
+          <rect x="-20" y="-20" width="40" height="40" fill="rgba(42,49,40,0.15)" transform="rotate(45)"/>
+          <circle r="8" fill="rgba(42,49,40,0.4)"/>
+        </g>
+        <circle cx="60" cy="90" r="14" fill="none" stroke="rgba(42,49,40,0.3)" stroke-width="1"/>
+        <circle cx="220" cy="90" r="14" fill="none" stroke="rgba(42,49,40,0.3)" stroke-width="1"/>
+        <circle cx="60" cy="290" r="14" fill="none" stroke="rgba(42,49,40,0.3)" stroke-width="1"/>
+        <circle cx="220" cy="290" r="14" fill="none" stroke="rgba(42,49,40,0.3)" stroke-width="1"/>
+        <path d="M30,130 Q140,118 250,130" stroke="rgba(255,255,255,0.2)" stroke-width="1" fill="none"/>
+        <path d="M30,250 Q140,238 250,250" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="card-overlay"><span>Quick View</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-tag">Banarasi</p>
+      <h3 class="card-title">Golden Zari Banarasi</h3>
+      <p class="card-price"><span class="currency">LKR</span> 32,000</p>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="product-card">
+    <div class="card-img">
+      <svg viewBox="0 0 280 373" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="c3" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f4e0e8"/>
+            <stop offset="100%" stop-color="#d4a0b5"/>
+          </linearGradient>
+        </defs>
+        <rect width="280" height="373" fill="url(#c3)"/>
+        <rect x="0" y="0" width="280" height="18" fill="#c8a96e" opacity="0.75"/>
+        <rect x="0" y="355" width="280" height="18" fill="#c8a96e" opacity="0.75"/>
+        <rect x="0" y="0" width="15" height="373" fill="#c8a96e" opacity="0.55"/>
+        <rect x="265" y="0" width="15" height="373" fill="#c8a96e" opacity="0.55"/>
+        <g transform="translate(140,186)">
+          <circle r="45" fill="none" stroke="rgba(200,169,110,0.45)" stroke-width="1.5"/>
+          <g fill="rgba(200,169,110,0.45)">
+            <ellipse cx="0" cy="-38" rx="4" ry="10" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="10" transform="rotate(60)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="10" transform="rotate(120)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="10" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="10" transform="rotate(240)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="10" transform="rotate(300)"/>
+          </g>
+          <circle r="10" fill="rgba(200,169,110,0.7)"/>
+        </g>
+        <g opacity="0.5">
+          <circle cx="70" cy="100" r="10" fill="none" stroke="rgba(200,169,110,0.6)" stroke-width="1"/>
+          <circle cx="210" cy="110" r="8" fill="none" stroke="rgba(200,169,110,0.6)" stroke-width="1"/>
+          <circle cx="80" cy="300" r="9" fill="none" stroke="rgba(200,169,110,0.6)" stroke-width="1"/>
+          <circle cx="205" cy="295" r="11" fill="none" stroke="rgba(200,169,110,0.6)" stroke-width="1"/>
+        </g>
+      </svg>
+      <div class="card-overlay"><span>Quick View</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-tag">Georgette</p>
+      <h3 class="card-title">Blush Petal Georgette</h3>
+      <p class="card-price"><span class="currency">LKR</span> 12,800</p>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="product-card">
+    <div class="card-img">
+      <svg viewBox="0 0 280 373" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="c4" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#e8eaf0"/>
+            <stop offset="100%" stop-color="#b0b8d8"/>
+          </linearGradient>
+          <pattern id="checkP" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+            <rect x="0" y="0" width="8" height="8" fill="rgba(176,184,216,0.3)"/>
+            <rect x="8" y="8" width="8" height="8" fill="rgba(176,184,216,0.3)"/>
+          </pattern>
+        </defs>
+        <rect width="280" height="373" fill="url(#c4)"/>
+        <rect width="280" height="373" fill="url(#checkP)"/>
+        <rect x="0" y="0" width="280" height="18" fill="#c8a96e" opacity="0.75"/>
+        <rect x="0" y="355" width="280" height="18" fill="#c8a96e" opacity="0.75"/>
+        <rect x="0" y="0" width="15" height="373" fill="#c8a96e" opacity="0.55"/>
+        <rect x="265" y="0" width="15" height="373" fill="#c8a96e" opacity="0.55"/>
+        <g transform="translate(140,186)">
+          <rect x="-30" y="-30" width="60" height="60" fill="rgba(200,169,110,0.2)" stroke="rgba(200,169,110,0.5)" stroke-width="1.5"/>
+          <circle r="10" fill="rgba(200,169,110,0.6)"/>
+        </g>
+      </svg>
+      <div class="card-overlay"><span>Quick View</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-tag">Cotton</p>
+      <h3 class="card-title">Indigo Weave Handloom</h3>
+      <p class="card-price"><span class="currency">LKR</span> 9,200</p>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="product-card">
+    <div class="card-img">
+      <svg viewBox="0 0 280 373" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="c5" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#f5f0e0"/>
+            <stop offset="100%" stop-color="#d8c890"/>
+          </linearGradient>
+        </defs>
+        <rect width="280" height="373" fill="url(#c5)"/>
+        <rect x="0" y="0" width="280" height="18" fill="#7fa883" opacity="0.8"/>
+        <rect x="0" y="355" width="280" height="18" fill="#7fa883" opacity="0.8"/>
+        <rect x="0" y="0" width="15" height="373" fill="#7fa883" opacity="0.6"/>
+        <rect x="265" y="0" width="15" height="373" fill="#7fa883" opacity="0.6"/>
+        <g transform="translate(140,186)" fill="none" stroke="rgba(127,168,131,0.5)" stroke-width="1.5">
+          <polygon points="0,-45 39,22 -39,22"/>
+          <polygon points="0,45 39,-22 -39,-22"/>
+        </g>
+        <circle cx="140" cy="186" r="12" fill="rgba(127,168,131,0.6)"/>
+        <path d="M30,100 Q140,88 250,100" stroke="rgba(127,168,131,0.3)" stroke-width="1" fill="none"/>
+        <path d="M30,280 Q140,268 250,280" stroke="rgba(127,168,131,0.3)" stroke-width="1" fill="none"/>
+      </svg>
+      <div class="card-overlay"><span>Quick View</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-tag">Linen</p>
+      <h3 class="card-title">Ivory Linen Elegance</h3>
+      <p class="card-price"><span class="currency">LKR</span> 11,500</p>
+    </div>
+  </div>
+
+  <!-- Card 6 -->
+  <div class="product-card">
+    <div class="card-img">
+      <svg viewBox="0 0 280 373" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="c6" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#1a1a2e"/>
+            <stop offset="100%" stop-color="#16213e"/>
+          </linearGradient>
+        </defs>
+        <rect width="280" height="373" fill="url(#c6)"/>
+        <rect x="0" y="0" width="280" height="18" fill="#c8a96e" opacity="0.9"/>
+        <rect x="0" y="355" width="280" height="18" fill="#c8a96e" opacity="0.9"/>
+        <rect x="0" y="0" width="15" height="373" fill="#c8a96e" opacity="0.7"/>
+        <rect x="265" y="0" width="15" height="373" fill="#c8a96e" opacity="0.7"/>
+        <g transform="translate(140,186)">
+          <circle r="50" fill="none" stroke="rgba(200,169,110,0.6)" stroke-width="1"/>
+          <circle r="35" fill="none" stroke="rgba(200,169,110,0.4)" stroke-width="1"/>
+          <g fill="rgba(200,169,110,0.6)">
+            <ellipse cx="0" cy="-38" rx="4" ry="11" transform="rotate(0)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="11" transform="rotate(45)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="11" transform="rotate(90)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="11" transform="rotate(135)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="11" transform="rotate(180)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="11" transform="rotate(225)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="11" transform="rotate(270)"/>
+            <ellipse cx="0" cy="-38" rx="4" ry="11" transform="rotate(315)"/>
+          </g>
+          <circle r="12" fill="rgba(200,169,110,0.8)"/>
+        </g>
+        <g opacity="0.4">
+          <circle cx="55" cy="80" r="6" fill="rgba(200,169,110,0.6)"/>
+          <circle cx="225" cy="80" r="6" fill="rgba(200,169,110,0.6)"/>
+          <circle cx="55" cy="300" r="6" fill="rgba(200,169,110,0.6)"/>
+          <circle cx="225" cy="300" r="6" fill="rgba(200,169,110,0.6)"/>
+        </g>
+      </svg>
+      <div class="card-overlay"><span>Quick View</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-tag">Bridal</p>
+      <h3 class="card-title">Midnight Royal Silk</h3>
+      <p class="card-price"><span class="currency">LKR</span> 45,000</p>
+    </div>
+  </div>
+
+  <!-- Card 7 -->
+  <div class="product-card">
+    <div class="card-img">
+      <svg viewBox="0 0 280 373" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="c7" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#fce8d0"/>
+            <stop offset="100%" stop-color="#f0b88a"/>
+          </linearGradient>
+        </defs>
+        <rect width="280" height="373" fill="url(#c7)"/>
+        <rect x="0" y="0" width="280" height="18" fill="#2a3128" opacity="0.7"/>
+        <rect x="0" y="355" width="280" height="18" fill="#2a3128" opacity="0.7"/>
+        <rect x="0" y="0" width="15" height="373" fill="#2a3128" opacity="0.5"/>
+        <rect x="265" y="0" width="15" height="373" fill="#2a3128" opacity="0.5"/>
+        <g transform="translate(140,186)" stroke="rgba(42,49,40,0.4)" fill="none">
+          <line x1="-40" y1="0" x2="40" y2="0" stroke-width="1.5"/>
+          <line x1="0" y1="-40" x2="0" y2="40" stroke-width="1.5"/>
+          <line x1="-28" y1="-28" x2="28" y2="28" stroke-width="1"/>
+          <line x1="28" y1="-28" x2="-28" y2="28" stroke-width="1"/>
+          <circle r="25" stroke-width="1.5"/>
+          <circle r="10" fill="rgba(42,49,40,0.25)" stroke="none"/>
+        </g>
+      </svg>
+      <div class="card-overlay"><span>Quick View</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-tag">Cotton</p>
+      <h3 class="card-title">Sunset Peach Handblock</h3>
+      <p class="card-price"><span class="currency">LKR</span> 8,900</p>
+    </div>
+  </div>
+
+  <!-- Card 8 -->
+  <div class="product-card">
+    <div class="card-img">
+      <svg viewBox="0 0 280 373" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
+        <defs>
+          <linearGradient id="c8" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#d4e4d6"/>
+            <stop offset="100%" stop-color="#9ec9a2"/>
+          </linearGradient>
+          <pattern id="leafP" x="0" y="0" width="28" height="28" patternUnits="userSpaceOnUse">
+            <ellipse cx="14" cy="14" rx="4" ry="8" fill="rgba(127,168,131,0.25)" transform="rotate(30 14 14)"/>
+          </pattern>
+        </defs>
+        <rect width="280" height="373" fill="url(#c8)"/>
+        <rect width="280" height="373" fill="url(#leafP)"/>
+        <rect x="0" y="0" width="280" height="18" fill="#c8a96e" opacity="0.8"/>
+        <rect x="0" y="355" width="280" height="18" fill="#c8a96e" opacity="0.8"/>
+        <rect x="0" y="0" width="15" height="373" fill="#c8a96e" opacity="0.6"/>
+        <rect x="265" y="0" width="15" height="373" fill="#c8a96e" opacity="0.6"/>
+        <g transform="translate(140,186)">
+          <circle r="42" fill="none" stroke="rgba(200,169,110,0.5)" stroke-width="2" stroke-dasharray="6 4"/>
+          <circle r="18" fill="rgba(200,169,110,0.35)"/>
+          <circle r="8" fill="rgba(200,169,110,0.7)"/>
+        </g>
+      </svg>
+      <div class="card-overlay"><span>Quick View</span></div>
+    </div>
+    <div class="card-body">
+      <p class="card-tag">Silk Cotton</p>
+      <h3 class="card-title">Garden Whisper Saree</h3>
+      <p class="card-price"><span class="currency">LKR</span> 15,200</p>
+    </div>
+  </div>
+
+</div><!-- end products -->
+
+<!-- ╔══════════════════════════════╗ -->
+<!-- ║            FOOTER            ║ -->
+<!-- ╚══════════════════════════════╝ -->
+<footer>
+  <div class="footer-grid">
+
+    <!-- Col 1: Brand -->
+    <div>
+      <div class="footer-logo">Yamihaa<span>.</span></div>
+      <p class="footer-tagline">Crafting stories in silk and thread — sarees that honour tradition and celebrate the modern Sri Lankan woman.</p>
+      <div class="footer-social">
+        <div class="social-dot">f</div>
+        <div class="social-dot">in</div>
+        <div class="social-dot">ig</div>
+        <div class="social-dot">yt</div>
+      </div>
+    </div>
+
+    <!-- Col 2: Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li>Home</li>
+        <li>Collections</li>
+        <li>New Arrivals</li>
+        <li>Sale</li>
+        <li>About Us</li>
+      </ul>
+    </div>
+
+    <!-- Col 3: Categories -->
+    <div class="footer-col">
+      <h4>Categories</h4>
+      <ul>
+        <li>Silk Sarees</li>
+        <li>Cotton Sarees</li>
+        <li>Banarasi Sarees</li>
+        <li>Bridal Sarees</li>
+        <li>Linen Sarees</li>
+      </ul>
+    </div>
+
+    <!-- Col 4: Contact -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <div class="contact-item">
+        <span class="contact-icon">📍</span>
+        <span class="contact-text">No. 42, Galle Road,<br>Colombo 03, Sri Lanka</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">📞</span>
+        <span class="contact-text">+94 11 234 5678<br>+94 77 890 1234</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">✉️</span>
+        <span class="contact-text">hello@yamihaa.lk</span>
+      </div>
+      <div class="contact-item">
+        <span class="contact-icon">🕐</span>
+        <span class="contact-text">Mon – Sat: 9:00 AM – 7:00 PM</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p class="copyright">© 2025 Yamihaa (Pvt) Ltd. All rights reserved. | yamihaa.lk</p>
+    <div class="footer-links-bottom">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <a href="#">Shipping Policy</a>
+    </div>
+  </div>
+
+</footer>
+
+<script>
+  // Category filter interaction
+  document.querySelectorAll('.cat-pill').forEach(pill => {
+    pill.addEventListener('click', () => {
+      document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+    });
+  });
+</script>
+</body>
+</html>
